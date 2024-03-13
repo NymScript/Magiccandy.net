@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+/* RESET LO QUE QUIERE DECIR ES QUE TODA LA PAG YO LE PONGO LAS MEDIDAS QUE SE QUIERAN*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    
+}
+
+/* HEADER */
+
+header{
+    height: 100px;
+    width: 100;
+    background-color: white;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    padding:0 10px;
+    display: inline-block;
+}
+
+.show-menu, 
+.hide-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    text-decoration: none;
+    color: black;
+    transition: 0,04s;
+}
+
+.show-menu{
+    order: 1;
+}
+
+.menu a:hover,
+.show-menu,
+.hide-menu{
+    color: black;
+}
+
+#check{
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:760px){
+    /* HEADER */
+    .hide-menu,
+    .show-menu{
+        display:block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        right: 100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0,08s;
+        text-decoration: none;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    .hide-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+}
+
+body {
+    justify-content: center;
+    background-image: url(../SRC/ASSETS/IMG/fondo\ body\ 2.jpg);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: auto; /* Centrar horizontalmente */
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Alinear elementos verticalmente */
+    justify-content: center; /* Centrar elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+    height: 50vh; /* Altura del contenedor, puede ajustarse según sea necesario */
+    margin-top:100px;
+}
+
+
+.producto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.imagen-producto {
+    max-width: 200px;
+    margin-left: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imagen-producto:hover {
+    transform: scale(1.1); /* Ajusta el nivel de zoom aquí */
+}
+
+.descripcion-precio {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.descripcion-precio h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.descripcion-precio p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.descripcion-precio label {
+    font-weight: bold;
+    color: #333;
+}
+
+.boton-carrito {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.boton-carrito button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 1px;
+}
+
+.boton-carrito button:hover {
+    background-color: #0056b3;
+}
+
+.botonW {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    padding: 10px 10px 9px 12px;
+    color:#fff;
+    background: #4bc75a;
+    border-radius: 50%;
+    font-size: 2.0em;
+    text-align: center;
+    vertical-align: middle;
+    bottom: 20px;
+    right:20px;
+    animation: vibrate 0.3s infinite alternate; /* Agregar animación de vibración */
+}
+
+.botonW:hover {
+    background: #4bc75a;
+    animation-play-state: paused; /* Pausar la animación al pasar el mouse */
+}
+
+.botonW:hover i {
+    color: #fff; /* Color blanco para el icono al pasar el mouse */
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(2px, 2px); /* Cambiar la posición para crear el efecto de vibración */
+    }
+}
+
+

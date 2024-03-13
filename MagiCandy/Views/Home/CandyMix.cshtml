@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Producto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/44485b0623.js" crossorigin="anonymous"></script> 
+    <link rel="icon" href="../SRC/ASSETS/IMG/Icono.ico">
+    <title>Anisadas</title>
+</head>
+<body>
+    <!-- ESTE ES EL MENU BLANCO CON CADA UNA DE LAS PAGINAS -->
+    <header>
+        <a href="Inicio.html"><img class="logo" src="../SRC/ASSETS/IMG/MGCwhite.jpg" alt="Logo" height="70px" width="200px"></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="show-menu">
+            &#8801
+        </label>
+        <nav class="menu">
+            <a href="Cuenta.html">Cuenta</a>
+            <a href="Inicio.html">Inicio</a>
+            <a href="Productos.html">Productos</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="Carrito.html"><i class="fas fa-shopping-cart"></i></a>
+            <label for="check" class="hide-menu">
+            &#215
+            </label>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="producto">
+            <div class="descripcion-precio">
+                <h2>Candy Mix</h2><br><br>
+                <p>Descripción del producto: Las Candy Mix son unos dulces tradicionales elaborados con...</p><br>
+                <p>Precio: $4.400</p><br><br>   
+                <!-- Agrega campo de cantidad -->
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" value="1" min="1">
+            </div>
+            <img src="../SRC/ASSETS/IMG/Candy mix.jpg" alt="Candy Mix" class="imagen-producto">
+        </div>
+        <div class="boton-carrito">
+            <!-- Agregar botón para agregar al carrito -->
+            <button onclick="agregarAlCarrito(3, 'Candy Mix', 4200, '../SRC/ASSETS/IMG/Candy mix.jpg', this)">
+                Agregar al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================ICONO DE whatsapp PARA COMUNICACION=========================================== -->
+
+    <a href="https://wa.me/+3133813154" class="botonW"
+    title="Envíanos un mensaje" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <!-- para que el ícono funcione, debemos incluir la librería de íconos fontawesome-->
+    </a>
+
+    <!-- JavaScript para gestionar el carrito -->
+    <script>
+        function agregarAlCarrito(idProducto, nombreProducto, precioProducto, imagenProducto, elementoClicado) {
+            var cantidad = document.getElementById('cantidad').value;
+            var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push({ id: idProducto, nombre: nombreProducto, precio: precioProducto, imagen: imagenProducto, cantidad: cantidad });
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            
+            // Redirigir a la página del carrito
+            window.location.href = 'carrito.html';
+        }
+    </script>
+</body>
+</html>
